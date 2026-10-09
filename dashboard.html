@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Manok Express - Human Information System</title>
+    
+</head>
+
+<body>
+    <div id="app" class="app">
+<aside class="sidebar">
+      <div class="brand">
+        <div class="logo">🐔</div>
+        <div><b>Manok Express Inasal</b><small>HR System</small></div>
+      </div>
+<nav>
+    <button class="dashboard" onclick="window.location.href='dashboard.html'"> Dashboard </button>
+    <button class="employees" onclick="window.location.href='employee.html'"> Employees </button>
+    <button class="attendance" onclick="window.location.href='attendance.html'"> Attendance </button>
+    <button class="timekiosk" onclick="window.location.href='timekiosk.html'"> Time Kiosk </button>
+</nav>
+</aside>
+<main class="main">
+    <header class="topbar">
+        <div>
+          <h2 id="pageTitle">Dashboard</h2>
+          <p id="pageDate" ></p>
+        </div>
+        <div class="live-clock" id="headerClock" ></div>
+      </header>
+
+      <section id="dashboard" class="page">
+        <div class="cards">
+            <div class="stat-card">
+                <strong class="em-number">0</strong>
+                <b>Total Employee</b>
+                <span>All Staff</span>
+            </div>
+             <div class="stat-card">
+                <strong>7</strong>
+                <b>Regular</b>
+                <span>permanent staff</span>
+            </div>
+          <div class="stat-card blue">
+            <strong id="presentCount">7</strong>
+            <b>Present Today</b>
+            <span>of 10</span>
+        </div>
+          <div class="stat-card red">
+            <strong id="absentCount">1</strong>
+            <b>Absent Today</b>
+            <span>marked absent</span>
+        </div>
+        </div>
+
+         <div class="dashboard-grid">
+            <div class="panel">
+                 <h3>BY STATION</h3>
+                 <div id="departmentBars"></div>
+            </div>
+            <div class="panel">
+            <h3>TODAY'S ATTENDANCE</h3>
+            <div id="todayAttendance"></div>
+          </div>
+         </div>
+         <div class="panel employment">
+          <h3>EMPLOYMENT STATUS BREAKDOWN</h3>
+          <div class="status-summary">
+            <span class="pill regular">Regular <b>7</b></span>
+            <span class="pill probationary">Probationary <b>1</b></span>
+            <span class="pill contractual">Contractual <b>1</b></span>
+            <span class="pill parttime">Part-time <b>1</b></span>
+          </div>
+        </div>
+      </section>
+</main>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>

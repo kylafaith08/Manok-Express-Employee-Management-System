@@ -1,0 +1,15 @@
+{
+    "employees": [
+        {
+            "id": 2,
+            "name": "Ellamae Lacha",
+            "status": "Contractual",
+            "station": "cashier",
+            "position": "crew",
+            "email": "ellamae03@gmail.com",
+            "salaryGrade": "Grade 5",
+            "phone": "09701015863",
+            "dateHired": "2026-09-10"
+        }
+    ]
+}

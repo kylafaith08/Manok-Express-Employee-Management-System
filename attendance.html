@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="style.css">
+    <title>Manok Express - Human Information System</title>
+    
+</head>
+<body>
+    <div id="app" class="app">
+<aside class="sidebar">
+      <div class="brand">
+        <div class="logo">🐔</div>
+        <div><b>Manok Express Inasal</b><small>HR System</small></div>
+      </div>
+<nav>
+    <button class="dashboard" onclick="window.location.href='dashboard.html'"> Dashboard </button>
+    <button class="employees" onclick="window.location.href='employee.html'"> Employees </button>
+    <button class="attendance" onclick="window.location.href='attendance.html'"> Attendance </button>
+    <button class="timekiosk" onclick="window.location.href='timekiosk.html'"> Time Kiosk </button>
+</nav>
+</aside>
+<main class="main">
+    <header class="topbar">
+        <div>
+          <h2 id="pageTitle">Attendance</h2>
+          <p id="pageDate" ></p>
+        </div>
+        <div class="live-clock" id="headerClock" ></div>
+      </header>
+
+      <section id="attendance" class="page">
+        <div class="page-heading"><div><h2>Attendance</h2><p>Daily employee attendance.</p></div></div>
+        <div class="attendance-toolbar">
+          <label>Date: <input id="attendanceDate" type="date" onchange="renderAttendance()"></label>
+          <div id="attendanceSummary"
+            <span class="pill present"> Present: </span>
+            <span class="pill absent"> Absent: </span>
+            <span class="pill late:"> Late: </span>
+            <span class="pill halfday"> Halfday: </span>
+            <span class="pill leave"> Leave: </span>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>EMPLOYEE</th><th>DEPARTMENT</th><th>POSITION</th><th>TIME IN</th><th>TIME OUT</th><th>STATUS</th><th>ACTION</th></tr></thead>
+            <tbody id="attendanceRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <script src="script.js"></script>
+</body>
+</html>

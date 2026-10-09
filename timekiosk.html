@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Manok Express - Human Information System</title>
+</head>
+
+<body>
+    <div id="app" class="app">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo">🐔</div>
+                <div><b>Manok Express Inasal</b><small>HR System</small></div>
+            </div>
+            <nav>
+                <button class="dashboard" onclick="window.location.href='dashboard.html'"> Dashboard </button>
+                <button class="employees" onclick="window.location.href='employee.html'"> Employees </button>
+                <button class="attendance" onclick="window.location.href='attendance.html'"> Attendance </button>
+                <button class="timekiosk" onclick="window.location.href='timekiosk.html'"> Time Kiosk </button>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+        <div>
+          <h2 id="pageTitle">Time Kiosk</h2>
+          <p id="pageDate" ></p>
+        </div>
+        <div class="live-clock" id="headerClock" ></div>
+      </header>
+            <section id="kiosk" class="page">
+                <div class="kiosk-head">
+
+                    <div class="kioskclock" id="kioskClock"></div>
+                    <p id="kioskDate"></p>
+                </div>
+                <div id="kioskGrid" class="kiosk-grid"></div>
+                
+                <div class="kiosk-card">
+                <div class="kiosk-person">
+                    <div class="avatar">AG</div>
+                    <div>
+                        <h4>Ana Gonzales</h4>
+                        <small>Finance</small>
+                    </div>
+                </div>
+                <div class="times">
+                    <div>Time In <b>—</b></div>
+                    <div>Time Out <b>—</b></div>
+                </div><button class="kiosk-btn" onclick="clockIn('ME-004')">Tap to Time In</button>
+            </div>
+            </section>
+
+            
+        </main>
+
+        <script src="script.js"></script>
+</body>
+
+</html>

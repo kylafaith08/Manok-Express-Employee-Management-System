@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Manok Express - Human Information System</title>
+
+</head>
+
+<body>
+  <div id="app" class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">🐔</div>
+        <div><b>Manok Express Inasal</b><small>HR System</small></div>
+      </div>
+      <nav>
+        <button class="dashboard" onclick="window.location.href='dashboard.html'"> Dashboard </button>
+        <button class="employees" onclick="window.location.href='employee.html'"> Employees </button>
+        <button class="attendance" onclick="window.location.href='attendance.html'"> Attendance </button>
+        <button class="timekiosk" onclick="window.location.href='timekiosk.html'"> Time Kiosk </button>
+      </nav>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h2 id="pageTitle">Employee Directory</h2>
+          <p id="pageDate"></p>
+        </div>
+        <div class="live-clock" id="headerClock"></div>
+      </header>
+
+      <section id="employees" class="page">
+        <div class="page-heading">
+          <div>
+            <h2>Employee Directory</h2>
+            <p>Manage employee records.</p>
+          </div>
+          <button class="primary-btn" onclick="openEmployeeModal()">+ Add Employee</button>
+        </div>
+        <div class="toolbar">
+
+          <input id="employeeSearch" oninput="filterEmployees()" placeholder="Search by name, ID, station...">
+
+          <select id="departmentFilter" onchange="filterEmployees()">
+            <option value="All">All Stations</option>
+            <option value="kitchen">Kitchen</option>
+            <option value="grill">Grill</option>
+            <option value="cashier">Counter</option>
+            <option value="dining">Dining</option>
+            <option value="assembly">Assembly</option>
+          </select>
+
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>EMPLOYEE ID</th>
+                <th>NAME</th>
+                <th>STATION</th>
+                <th>STATUS</th>
+                <th>SALARY GRADE</th>
+                <th>EMAIL</th>
+                <th>PHONE NO.</th>
+                <th>DATE HIRED</th>
+                <th>ACTION</th>
+              </tr>
+            </thead>
+            <tbody id="employeeRows"></tbody>
+          </table>
+        </div>
+        <p id="employeeTotal" class="muted"></p>
+      </section>
+
+
+      <div id="employeeModal" class="modal hidden">
+        <div class="modal-box">
+          <button class="close" onclick="closeEmployeeModal()">×</button>
+          <h2 id="modalTitle">Add Employee</h2>
+          <form onsubmit="addEmployee(event)">
+
+            <input id="newName" required placeholder="Full name">
+
+
+            <select id="newStatus">
+              <option>Regular</option>
+              <option>Probationary</option>
+              <option>Contractual</option>
+              <option>Part-time</option>
+            </select>
+
+            <select id="newStation" required placeholder="Station">
+              <option value="">--Station--</option>
+              <option value="kitchen">Kitchen</option>
+              <option value="grill">Grill</option>
+              <option value="cashier">Counter</option>
+              <option value="dining">Dining</option>
+              <option value="assembly">Assembly</option>
+            </select>
+
+            <select id="newPosition">
+              <option value="">--Position--</option>
+              <option value="tl">Team Leader</option>
+              <option value="crew">Service Crew</option>
+            </select>
+            <input id="newEmaill" required placeholder="Email" type="email">
+
+            <input id="newGrade" required placeholder="Salary Grade">
+            <input type="tel" id="phoneNo" required placeholder="Phone No.">
+
+            <input type="date" id="dateHired" required placeholder="Date Hired">
+
+            <button id="modalSubmitButton" class="primary-btn" type="submit">Add Employee</button>
+          </form>
+        </div>
+      </div>
+
+
+      <script src="script.js"></script>
+</body>
+
+</html>
